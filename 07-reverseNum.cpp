@@ -46,7 +46,4 @@ int reverse(int x) {
      * git add 让 git 去跟踪这个文件的更待
      * git commit 把更改保存到本地的 master
      * git push 把本地的 master 提交到 origin
-     * 
-     * 
-     * 
      * /
