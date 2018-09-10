@@ -10,4 +10,6 @@ int main() {
     string s1 = "abcd";
     string s2 = "bc";
     cout << s1+s2;
+    
 }
+

@@ -27,5 +27,5 @@ public:
 };
 int main() {
     Solution s;
-    cout << s.numDecodings("27");
+    cout << s.numDecodings("40");
 }
