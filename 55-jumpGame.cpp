@@ -32,8 +32,17 @@ bool canJump(vector<int>& nums) {
     }
     return reach >= n-1;
 }
+bool canJump2(vector<int>& nums) {
+    int n = nums.size();
+    vector<bool> v(n, false);
+    v[0] = true;
+    for (int i = 1; i < n; ++i) {
+        if (v[i-1] && nums[i-1] > 0) v[i] = true;
+    }
+    return v[n-1];
 }
+
 int main() {
-    vector<int> nums = {3,2,1,0,4};
-    cout << canJump(nums);
+    vector<int> nums = {3,2,1,0,2,4};
+    cout << canJump2(nums);
 }

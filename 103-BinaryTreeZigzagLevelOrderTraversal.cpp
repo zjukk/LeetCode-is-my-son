@@ -22,7 +22,7 @@ public:
                 if (fromLeft)
                 cur.push_back(node->val);
                 else
-                cur.insert(cur.begin(),node->val);
+                cur.insert(cur.begin(),node->val);//逆序从头插入
                 if (node->left) q.push(node->left);
                 if (node->right) q.push(node->right);
             }

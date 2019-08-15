@@ -8,7 +8,7 @@ class Solution {
 public:
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
         if (preorder.empty()) return NULL;
-        if (preorder.size() == 1) return new TreeNode(preorder[0]);//返回值要加new!!!因为返回类型是指针
+        if (preorder.size() == 1) return new TreeNode(preorder[0]);//可以没有，返回值要加new!!!因为返回类型是指针
         TreeNode* root = new TreeNode(preorder[0]);
         int gen = 0;
         for (int i = 0; i < inorder.size(); ++i) {

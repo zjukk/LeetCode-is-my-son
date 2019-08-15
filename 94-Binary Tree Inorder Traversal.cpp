@@ -42,3 +42,20 @@ using namespace std;
         }
         return ans;
     }
+
+  vector<int> inorderTraversal(TreeNode* root) {
+    if (!root) return{};
+    vector<int> res;
+    stack<TreeNode*> s;
+    while (!s.empty() || root) {
+        while (root) {
+            s.push(root);
+            root = root->left;
+        }
+        root = s.top();
+        res.push_back(root->val);
+        s.pop();
+        root = root->right;
+    }
+      return res;
+}

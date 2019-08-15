@@ -24,3 +24,31 @@ public:
         return ans;
     }
 };
+class Solution {
+public:
+    ListNode* swapPairs(ListNode* head) {
+        if (!head || !head->next) return head;
+        ListNode* t = head->next;
+        head->next = swapPairs(head->next->next);
+        t->next = head;
+        return t;
+    }
+};
+class Solution {
+public:
+    ListNode* swapPairs(ListNode* head) {
+        if (!head) return NULL;
+        if (!head->next) return head;
+        ListNode* pre = head;
+        ListNode* cur = head->next;
+        ListNode* res = cur;
+        while (cur && pre) {
+            ListNode* next = cur->next;
+            cur->next = pre;
+            pre->next = (next && next->next) ? next->next : next;
+            pre = next;
+            if (pre) cur = pre->next;
+        }
+        return res;
+    }
+};

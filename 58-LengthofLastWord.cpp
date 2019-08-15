@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-
+#include <sstream>
 using namespace std;
 class Solution {
 public:
@@ -30,7 +30,17 @@ public:
         return itOfStr - s.begin() + 1;
     }
 };
+
+class Solution2 {
+public:
+    int lengthOfLastWord(string s) {
+        istringstream is(s);
+        string tmp;
+        while (is >> tmp);
+        return tmp.size();
+    }
+};
 int main() {
-    Solution s;
+    Solution2 s;
     cout << s.lengthOfLastWord("World ");
 }
